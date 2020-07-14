@@ -1,0 +1,1 @@
+print("Yo t'as pas un 6")
