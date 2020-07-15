@@ -5,10 +5,9 @@ nombre3 = 3
 c = -((nombre1+nombre2)-(nombre1*nombre3))+(nombre1+(nombre2*nombre3))
 b = "Chaîne de caractère"
 #branches gitkraken
-
 #initialisation de gitflow
 #merge features
-
+#DVPP compare values with operators
 print(c)
 print(nombre1)
 print("Hello aziz !")
