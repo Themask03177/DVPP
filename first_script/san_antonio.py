@@ -10,6 +10,7 @@ Charcters = [
              "Betty boot",
              "Babar",
              "Calimero",
-             "Caster"
+             "Caster",
+             "Baltazar"
 ]
 
