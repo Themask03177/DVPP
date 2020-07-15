@@ -4,21 +4,20 @@ Quotes = ["listen to me, Mister Shakespeare : we may or may not be, we are", "we
 
 Characters = ["Alvin et les chumpunks", "Betty boot", "Babar", "Calimero", "Caster", "Baltazar"]
 
-User_Answer = input("Press Enter for know another quotes or press 'B' for leave program")
-# show random quotes
-
-if User_Answer == "B":
-  exit()
-if User_Answer == "C":
-  print(" 'C' is'nt a good answer... please enter another letter or press 'B' for leave program")
-else :
-  pass
+# définition de la fonction get random
 def Get_Random_Quotes(My_list):
   # get a random item
-  item = My_list[1]
-  print(item)
-  return "Program is over"
-  # show the quote
-print(Get_Random_Quotes(Quotes))
+  item = My_list[0]
+  return item
+
+# Get user answer
+
+User_Answer = input("Press Enter for know another quotes or press 'B' for leave program")
+
+while User_Answer != "B":
+  print(Get_Random_Quotes(Quotes))
+  User_Answer = input("Press Enter for know another quotes or press 'B' for leave program")
+# show random quotes
+
 
 
