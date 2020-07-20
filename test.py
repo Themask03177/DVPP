@@ -20,5 +20,7 @@ def Get_Random_Quotes(My_list):
   return "Program is over"
   # show the quote
 print(Get_Random_Quotes(Quotes))
+ # string of characters
 
-
+hello = "Hello word !"
+hello.split()
