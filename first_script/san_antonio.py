@@ -1,43 +1,36 @@
+# -*- coding: utf8 -*-
 import random
+import json
 
-#Ecriture du code
+def read_values_from_json(file, key):
+  values = []
+  with open(file) as f:
+      data = json.load(f)
+      for entry in data:
+        values.append(entry[key])
+  return values
 
-Quotes = ["listen to me, Mister Shakespeare : we may or may not be, we are", "we must be able listenning to ourselves or being heard"]
+def message(character, quote):
+  n_character = character.capitalize()
+  n_quote = quote.capitalize()
+  return "{} say : {}".format(n_character, n_quote)
 
-Characters = ["alvin et les chumpunks", "betty boot", "babar", "Calimero", "caster", "Baltazar"]
+def get_random_item_in(my_list):
+  rand_numb = random.randint(0, len(my_list) - 1)
+  item = my_list[rand_numb] # get a quote from a list
+  return item # return the item
 
-# définition de la fonction get random
-def Get_Random_Quotes(My_list):
-  rand_num = random.randint(0, len(My_list) - 1)
-  item = My_list[rand_num]
-  return item
-# words capitalize
-def capitalize(Words):
-  for Word in Words :
-    Word.capitalize()
+def get_random_quote():
+  all_values = read_values_from_json('quotes.json', 'Quotes')
+  return get_random_item_in(all_values)
 
-# message character
+def get_random_character():
+  all_values = read_values_from_json('characters.json', 'Characters')
+  return get_random_item_in(all_values)
 
-def message(Character, Quote):
-  capitalize(Character)
-  capitalize(Quote)
-  return "{} a dit : {}".format(Character, Quote)
+# Programm
+user_answer = input('Tapez entrée pour connaître une autre citation ou B pour quitter le programme.')
 
-# Get user answer
-
-User_Answer = input("Press Enter for know another quotes or press 'B' for leave program")
-
-while User_Answer != "B":
-  print(Get_Random_Quotes(Quotes))
-  User_Answer = input("Press Enter for know another quotes or press 'B' for leave program")
-# show random quotes
-# put capitalize a fist letter of sentence
-
-for Character in Characters:
-  n_Characters = Character.capitalize()
-  print(n_Characters)
-
-
-
-
-
+while user_answer != "B":
+  print(message(get_random_character(), get_random_quote()))
+  user_answer = input('Tapez entrée pour connaître une autre citation ou B pour quitter le programme.')
