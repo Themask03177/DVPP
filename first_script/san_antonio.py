@@ -41,7 +41,7 @@ def random_value(source_path, key):
 # Gather quotes from San Antonio
 
 def random_quote():
-    return random_value('quotes.json', 'quote')
+    return random_value('quotes.json', 'Quotes')
 
 ######################
 #### CHARACTERS ######
@@ -50,7 +50,7 @@ def random_quote():
 # Gather characters from Wikipedia
 
 def random_character():
-    return random_value('characters.json', 'character')
+    return random_value('characters.json', 'Characters')
 
 
 ######################
